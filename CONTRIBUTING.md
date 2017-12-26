@@ -71,7 +71,7 @@ If you would like to contribute to this project, and you are new to developing o
 1. Clone the project to your local development folder.
 
   ```bash
-  git clone https://github.com/MikaSoftware/django-trapdoor.git
+  git clone https://github.com/MikaSoftware/django-starterkit.git
   ```
 
 2. Setup our virtual environment
