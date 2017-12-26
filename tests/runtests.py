@@ -44,12 +44,42 @@ ALWAYS_MIDDLEWARE_CLASSES = (
     # . . .
 )
 
-# OUR LIBRARY...
+# OUR CUSTOM AUTHENTICATION BACKENDS...
 ALWAYS_AUTHENTICATION_BACKENDS = (
     'starterkit.auth.backends.UserModelEmailBackend', # Support email as username.
     'django.contrib.auth.backends.ModelBackend',
 )
 
+# OUR CUSTOM PASSWORD VALIDATORS...
+ALWAYS_AUTH_PASSWORD_VALIDATORS = [
+    {
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'OPTIONS': {
+            'min_length': 10,
+        }
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    },
+    {
+        'NAME': 'starterkit.password_validation.UppercaseCharacterPasswortValidator',
+        'OPTIONS': {
+            'min_occurrence': 1,
+        }
+    },
+    {
+        'NAME': 'starterkit.password_validation.SpecialCharacterPasswortValidator',
+        'OPTIONS': {
+            'min_occurrence': 1,
+        }
+    }
+]
 
 settings.configure(
     SECRET_KEY="django_tests_secret_key",
@@ -59,6 +89,7 @@ settings.configure(
     INSTALLED_APPS=ALWAYS_INSTALLED_APPS + CUSTOM_INSTALLED_APPS,
     MIDDLEWARE=ALWAYS_MIDDLEWARE_CLASSES,
     AUTHENTICATION_BACKENDS=ALWAYS_AUTHENTICATION_BACKENDS,
+    AUTH_PASSWORD_VALIDATORS=ALWAYS_AUTH_PASSWORD_VALIDATORS,
     ROOT_URLCONF='tests.urls',
     DATABASES={
         'default': {
