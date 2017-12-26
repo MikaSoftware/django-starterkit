@@ -7,4 +7,4 @@
 #  -- E225 missing whitespace around operator
 #  -- E501 line too long
 
-pep8 --exclude=migrations --ignore=E128,E225,E501 .
+pep8 --exclude=migrations,env,sample_project --ignore=E128,E225,E501 .

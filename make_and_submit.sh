@@ -12,7 +12,7 @@
 # Delete previously created files.
 rm -rf build
 rm -rf dist
-rm -rf django_trapdoor.egg-info
+rm -rf django_starterkit.egg-info
 
 # Minimally, you should create a Source Distribution:
 python setup.py sdist
