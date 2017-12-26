@@ -1,0 +1,19 @@
+sudo: false
+language: python
+
+python:
+  - "3.6"
+
+env:
+  - DJANGO="django==2.0.0"
+
+install:
+  - pip install $DJANGO
+  - pip install -e .
+  - pip install coverage
+  - pip install coveralls
+
+script: coverage run --source=starterkit tests/runtests.py
+
+after_success:
+  coveralls

@@ -1,0 +1,5 @@
+include LICENSE
+include README.md
+recursive-include starterkit/auth *
+recursive-include starterkit/migrations *
+recursive-include starterkit *
