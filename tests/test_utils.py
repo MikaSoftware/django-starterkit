@@ -35,6 +35,17 @@ class TestUtils(SimpleTestCase):
         hashed_value = generate_hash(value)
         self.assertIsNotNone(hashed_value)
 
+    def test_generate_multiple_hashes(self):
+        salt1 = generate_hash()
+        self.assertIsNotNone(salt1)
+        salt2 = generate_hash()
+        self.assertIsNotNone(salt2)
+        self.assertNotEqual(salt1, salt2)
+        salt3 = generate_hash()
+        self.assertIsNotNone(salt3)
+        self.assertNotEqual(salt1, salt3)
+        self.assertNotEqual(salt2, salt3)
+
     def test_get_unique_username_from_email(self):
         email_value = "bart@overfiftyfive.com"
         hashed_email_value = get_unique_username_from_email(email_value)

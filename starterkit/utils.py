@@ -32,7 +32,12 @@ def get_random_string(length=31,
     return crypto.get_random_string(length, allowed_chars)
 
 
-def generate_hash(value=timezone.now()):
+def generate_hash(value=None):
+    # Handle null values.
+    if value is None or value == '':
+        value = timezone.now()
+        value = value.timestamp()
+
     # Convert whatever data format into a string value.
     value_str = str(value)
 
