@@ -17,13 +17,3 @@ class IsUserNotSuspendedPermission(permissions.BasePermission):
             return request.user.is_active
 
         return False
-#
-#
-# class IsUserNotSuspendedObjectPermission(permissions.BasePermission):
-#     message = _('You do not have permission to access this API-endpoint because your account is suspended.')
-#
-#     def has_object_permission(self, request, view, obj):
-#         if request.user.is_authenticated:
-#             return request.user.is_active
-#
-#         return False
