@@ -3,7 +3,7 @@ from django.utils.translation import ugettext_lazy as _
 from rest_framework import permissions
 
 
-class IsUserNotSuspendedPermission(permissions.BasePermission):
+class IsAuthenticatedAndIsActivePermission(permissions.BasePermission):
     message = _('You do not have permission to access this API-endpoint because your account is suspended.')
 
     def has_permission(self, request, view):

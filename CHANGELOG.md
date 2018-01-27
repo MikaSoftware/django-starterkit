@@ -1,6 +1,6 @@
 ## 1.0.2
 
-  - Added 'IsUserNotSuspendedPermission' permission class for the `djangorestframework`.
+  - Added 'IsAuthenticatedAndIsActivePermission' permission class for the `djangorestframework`.
 
 ## 1.0.1
 

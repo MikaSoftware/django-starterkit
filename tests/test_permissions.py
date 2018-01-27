@@ -53,12 +53,12 @@ class TestPermissions(TestCase):
         del self.view
         super(TestPermissions, self).tearDown()
 
-    def test_is_user_not_suspended_permission(self):
+    def test_is_auth_and_is_active_permission(self):
         # Variable is just a sample object.
         mock_object = MagicMock()
 
         # Variable is our permission class.
-        permission = IsUserNotSuspendedPermission()
+        permission = IsAuthenticatedAndIsActivePermission()
 
         # VIEW BASED.
 
