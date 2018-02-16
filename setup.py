@@ -13,7 +13,7 @@ def readme():
 
 setup(
     name='django-starterkit',
-    version='1.0.2',
+    version='1.0.3',
     url='https://github.com/mikasoftware/django-starterkit',
     license='BSD 3-Clause License',
     description="Library with reusable code for every django project you work with.",

@@ -44,8 +44,11 @@ def generate_hash(value=None):
     # Conver into UTF-8 formatted string value
     utf8_value_str = value_str.encode('utf8', 'ignore')
 
-    # Return the hash
-    return base64.urlsafe_b64encode(hashlib.sha256(utf8_value_str).digest())
+    # Return the hash binary data.
+    byte_data = base64.urlsafe_b64encode(hashlib.sha256(utf8_value_str).digest())
+
+    # Convert to a UTF-8 string.
+    return byte_data.decode("utf-8")
 
 
 def get_unique_username_from_email(email):
