@@ -1,3 +1,7 @@
+## 1.0.6
+
+  - Updated requirements.txt to have latest libraries.
+
 ## 1.0.3
 
   - Bugfix: Fixed "generate_hash" function to return a string and not binary code.
