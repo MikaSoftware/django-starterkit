@@ -22,4 +22,4 @@ python setup.py sdist
 python setup.py bdist_wheel
 
 # Submit to 'PyPi' distribution service.
-twine upload dist/*
+twine upload --repository-url https://upload.pypi.org/legacy/ dist/*
